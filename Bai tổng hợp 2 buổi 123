@@ -1,0 +1,117 @@
+
+===================SỐ HOÀN HẢO NHỎ HƠN N====================
+Himport java.util.*;
+public class SoHoanHao {
+	public int inPut(){
+		int num;
+		do{
+			Scanner n=new Scanner (System.in);
+			num= n.nextInt();
+		}while (num<0);
+		return num;
+	}
+	public boolean kiemTraSHH(int so1)
+	{
+		int tong=0;
+		for(int i=1; i<so1; i++)
+		{
+			if(so1 % i == 0)
+			{
+				tong = tong + i;
+			}
+		}
+		if(tong == so1)
+			return true;
+		else
+			return false;
+	}
+	public void inSHHNhoHonN( int n)
+	{
+		System.out.print("Cac so hoan hao < " + n + " la ");
+		for(int i = 1; i<n; i++)
+		{
+			if(kiemTraSHH(i) == true)
+			{
+				System.out.print(""+i);
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		SoHoanHao b2 = new SoHoanHao();
+		int n;
+		System.out.print("Nhap so n= ");
+		n = b2.inPut();
+		b2.inSHHNhoHonN(n);
+
+	}
+
+}
+==============SỐ CHIA HẾT CHO 3 HOẶC 5========================
+import java.util.*;
+public class Chiahet3or5 {
+	public int inPut(){
+		int num;
+		do{
+			Scanner n=new Scanner (System.in);
+			num= n.nextInt();
+		}while (num<0);
+		return num;
+	}
+	public void inSoChia2Hoac5 (int a, int b)
+	{
+		System.out.print("Cac so tu " + a + " den " + b + "chia het cho 3 hoac 5 la " );
+		for (int i=a; i<=b; i++)
+		{
+			if((i % 3 == 0) || (i % 5 == 0))
+			{
+				System.out.print(""+i);
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int so1, so2;
+		Chiahet3or5 b1 = new Chiahet3or5();
+		System.out.print("Hay nhap so 1: ");
+		so1 = b1.inPut();
+		System.out.print("Hay nhap so 2: ");
+		so2 = b1.inPut();
+		b1.inSoChia2Hoac5(so1, so2);
+
+	}
+}
+==========TÍNH DIEN TICH HCN==================
+
+import java.util.Scanner;
+public class TinhDienTichHCN {
+	
+	public float nhapSo() 
+	{
+		float n;
+		Scanner s1 = new Scanner(System.in);
+		n = s1.nextFloat();
+		return n;
+	}
+	public float tinhDienTich(float d,float r) 
+	{
+		float DT;
+		DT = d * r;
+		return DT;
+	}
+
+	public static void main(String[] args) {
+		
+		float dai, rong, dientich;
+		TinhDienTichHCN HCN1 = new TinhDienTichHCN();
+		System.out.print("-Nhap chieu dai : ");
+		dai = HCN1.nhapSo();
+		System.out.print("-Nhap chieu rong : ");
+		rong = HCN1.nhapSo();
+		dientich = HCN1.tinhDienTich(dai,rong);
+		System.out.println("-Dien tinh la : "+ dientich);
+	}
+
+}
+
+
